@@ -1,0 +1,48 @@
+.navbar {
+    background-color: $primary !important;
+    padding: 1rem 0;
+    border: 1px solid $background-color;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+
+    &__container {
+        @extend .container;
+
+        @media (min-width: $tablet-width) {
+            justify-content: space-between;
+            flex-direction: row;
+        }
+
+    
+    }
+    
+
+    .nav__link {
+        font-size: 15px;
+    }
+    .nav__link--active {
+        color: $secondary !important;
+    }
+    
+
+    
+}
+
+.navbar-collapse {
+    height: 120px;
+
+    @media (min-width: $tablet-width)  {
+        height: auto;
+
+
+    }
+}
+
+
+.navbar-brand {
+    font-family: "Open Sans", sans-serif;
+    font-size: 38px;
+    text-transform: uppercase;
+}
+

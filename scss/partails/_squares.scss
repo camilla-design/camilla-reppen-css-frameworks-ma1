@@ -1,0 +1,48 @@
+.squares {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+
+
+    @media (min-width: $tablet-width)  {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 220px);
+        margin: 2rem 1rem;
+        grid-gap: 1.5rem;
+        justify-content: center;
+
+
+    }
+    
+    .square__item,
+    .square__item--pink--boarder,
+    .square__item--pink {
+        width: 357px;
+        height: 355px;
+        background-color: $primary !important;
+        border-radius: 12%;
+        margin-top: 30px;
+
+    }
+
+    .square__item--pink--boarder {
+        border: 2px solid $secondary;
+        background-color: $white;
+    }
+
+    .square__item--pink {
+        background-color: $secondary !important;
+    }
+
+    @media (min-width: $tablet-width)  {
+        flex-direction: row;
+        justify-content: space-between;
+        
+        .square__item,
+    .square__item--pink--boarder,
+    .square__item--pink {
+        width: 264px;
+        height: 263px;
+    }
+}
+}
