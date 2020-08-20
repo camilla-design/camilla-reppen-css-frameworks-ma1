@@ -1,48 +1,65 @@
 .squares {
-    display: flex;
-    flex-direction: column;
-    align-items: center;  
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 300px);
+    margin: 2rem 1rem;
+    grid-gap: 1.5rem;
+    justify-content: center;
 
-
-    @media (min-width: $tablet-width)  {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, 220px);
-        margin: 2rem 1rem;
-        grid-gap: 1.5rem;
-        justify-content: center;
-
-
-    }
-    
-    .square__item,
-    .square__item--pink--boarder,
-    .square__item--pink {
+    &__item {
+        border-radius: 15px;
         width: 357px;
         height: 355px;
-        background-color: $primary !important;
-        border-radius: 12%;
-        margin-top: 30px;
+        padding-top: 100%;
+        background: $primary;
+        position: relative;
+        box-shadow: 6px solid black;
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+
+        }
+
+        &--white {
+            @extend .squares__item;
+            background: $white;
+            border: 2px solid $secondary;
+
+            &:before {
+                @extend .squares__item:before;
+                content: "";
+            }
+        }
+
+        &--pink {
+            @extend .squares__item;
+            background: $secondary;
+
+            &:before {
+                @extend .squares__item:before;
+                content: "";
+            }
+        }
 
     }
 
-    .square__item--pink--boarder {
-        border: 2px solid $secondary;
-        background-color: $white;
-    }
-
-    .square__item--pink {
-        background-color: $secondary !important;
-    }
-
-    @media (min-width: $tablet-width)  {
-        flex-direction: row;
-        justify-content: space-between;
-        
-        .square__item,
-    .square__item--pink--boarder,
-    .square__item--pink {
-        width: 264px;
-        height: 263px;
-    }
 }
+
+@media (min-width: $tablet-width) {
+    .squares {
+        width: 1440px;
+        margin: 0 auto;
+        padding-top: 50px;
+    }
+
+    .squares__item--white,
+    .squares__item,
+    .squares__item--pink {
+        width: 264px;
+        height: 253px;
+        margin: 0;
+        padding: 0;
+    }
 }

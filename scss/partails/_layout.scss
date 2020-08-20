@@ -4,11 +4,11 @@
 
 html,
 body {
-    height: 100%
+    height: 100%;
 }
 
 body {
-    background-color: $background-color !important;
+    background: $background-color;
     font-family: $font-primary;
     color: $navbar-dark-color;
     margin: 0;
@@ -21,12 +21,12 @@ body {
 }
 
 .grid {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
 
-    &__item {
-        margin: 0.5em;
-        max-width: 250px;
+    > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }
 
@@ -37,71 +37,16 @@ body {
     align-items: center;
 }
 
-.squares {
-    padding-top: 90px;
+.heading {
+    padding-top: 120px;
+    text-align: center;
 }
 
-/*
-* {
-    box-sizing: border-box;
-}
-
-html,
-body {
-    height: 100%;
-}
-
-body {
-    font-family: $font-primary;
-    background-color: $background-color !important;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    z-index: -1;
-}
-
-.container {
-    margin-top: 100px;
-    
-}
-.grid {
-    display: flex;
-    flex-wrap: wrap;
-
-    &__item {
-        margin: 0.5em;
-        max-width: 250px;
+@media (min-width: $tablet-width) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .squares {
+        max-width: 1440px;
     }
 }
-
-footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    background-color: $white;
-    margin-top: 2rem;
-    font-size: 0.8em;
-    padding: 0.5em;
-
-    @media (min-width: $tablet-width) {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 0;
-    }
-}
-
-
-
-footer a {
-    color: $footer-font-color;
-}
-
-
-.wrapper {
-    flex: 1 0 auto;
-}
-
-*/
